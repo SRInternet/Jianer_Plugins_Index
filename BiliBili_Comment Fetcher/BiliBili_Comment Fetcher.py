@@ -28,8 +28,8 @@ async def on_message(event, actions, Manager, Segments, order, bot_name, reminde
 
 示例：
 {reminder}{TRIGGHT_KEYWORD} 115852649174965
-{reminder}{TRIGGHT_KEYWORD} 115852649174965 2'''
-视频ID可以通过Bilibili Archives Assistant插件获取
+{reminder}{TRIGGHT_KEYWORD} 115852649174965 2
+视频ID可以通过Bilibili Archives Assistant插件获取'''
         
         await actions.send(
             group_id=event.group_id,
