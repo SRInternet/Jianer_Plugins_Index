@@ -4,19 +4,21 @@ import tempfile
 import os
 from datetime import datetime
 
+# 导入配置管理模块
 from Hyper import Configurator
 Configurator.cm = Configurator.ConfigManager(Configurator.Config(file="config.json").load_from_file())
 
-
 reminder = Configurator.cm.get_cfg().others["reminder"]
-bot_name = Configurator.cm.get_cfg().others["bot_name"]
 
-
-TRIGGER_KEYWORD = f"日新闻图"
+TRIGGHT_KEYWORD = "日新闻图"
 HELP_MESSAGE = f"{reminder}日新闻图 —> 获取今日新闻摘要图片 📰"
 
 async def on_message(event, actions, Manager, Segments):
     try:
+        message_text = str(event.message)
+        if not message_text.startswith(f"{reminder}日新闻图"):
+            return None
+            
         api_url = "https://uapis.cn/api/v1/daily/news-image"
         timeout = aiohttp.ClientTimeout(total=15)
         

@@ -28,7 +28,12 @@ except (KeyError, AttributeError):
 
 TRIGGHT_KEYWORD = "Any"  # 永久触发插件
 
+# 一级菜单
 HELP_MESSAGE = f"""{reminder}敏感词检测 开启/关闭/状态 —> 🌟 管理群内敏感词检测功能
+{reminder}敏感词检测 —> 查看详细使用方式"""
+
+# 二级菜单（详细版）- 用于详细帮助显示
+SECONDARY_HELP = f"""{reminder}敏感词检测 开启/关闭/状态 —> 🌟 管理群内敏感词检测功能
 {reminder}敏感词检测 添加敏感词 [敏感词] —> 📝 添加新的敏感词
 {reminder}敏感词检测 删除敏感词 [敏感词] —> 🗑️ 删除现有敏感词
 {reminder}敏感词检测 添加白名单 [QQ号] —> 🛡️ 添加用户到白名单
@@ -624,28 +629,16 @@ async def on_message(event, actions, Manager, Segments, Events, reminder):
         command_text = clean_text[len(f"{reminder}敏感词检测"):].strip()
         
         if not command_text:
-            # 显示当前状态
-            status = "✅ 开启" if str(group_id) in enabled_groups else "❌ 关闭"
-            local_count = len(local_words)
-            whitelist_count = len(whitelist)
-            
+            # 当用户只发送"{reminder}敏感词检测"时，显示二级菜单
             await send_message_with_auto_delete(
                 actions,
                 group_id,
                 Manager.Message(Segments.Text(
-                    f"📊 【{bot_name}敏感词检测状态】\n"
+                    f"📚 【{bot_name}敏感词检测详细使用方式】\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"🔸 当前群状态: {status}\n"
-                    f"🔸 本地敏感词: {local_count} 个\n"
-                    f"🔸 白名单用户: {whitelist_count} 个\n"
+                    f"{SECONDARY_HELP}\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"⚙️ 当前设置：\n"
-                    f"  • 违规窗口: {plugin_config['violation_window']}秒\n"
-                    f"  • 最大违规: {plugin_config['max_violations']}次\n"
-                    f"  • 禁言时长: {plugin_config['ban_duration']//60}分钟\n"
-                    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"📖 使用帮助：\n"
-                    f"{HELP_MESSAGE}"
+                    f"💝 {bot_name}会认真守护聊天环境哦~"
                 ))
             )
             return True
@@ -699,7 +692,13 @@ async def on_message(event, actions, Manager, Segments, Events, reminder):
                     f"🔸 本地敏感词: {local_count} 个\n"
                     f"🔸 白名单用户: {whitelist_count} 个\n"
                     f"━━━━━━━━━━━━━━━━━━━━━━━\n"
-                    f"💝 {bot_name}会认真守护聊天环境哦~"
+                    f"⚙️ 当前设置：\n"
+                    f"  • 违规窗口: {plugin_config['violation_window']}秒\n"
+                    f"  • 最大违规: {plugin_config['max_violations']}次\n"
+                    f"  • 禁言时长: {plugin_config['ban_duration']//60}分钟\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"📖 使用帮助：\n"
+                    f"{HELP_MESSAGE}"
                 ))
             )
             return True
@@ -918,14 +917,17 @@ async def on_message(event, actions, Manager, Segments, Events, reminder):
                 save_plugin_config()
                 return True
         
-        # 未知命令
+        # 未知命令 - 显示二级菜单
         else:
             await send_message_with_auto_delete(
                 actions,
                 group_id,
                 Manager.Message(Segments.Text(
                     f"🤔 未知的命令呢~ 试试这些命令吧：\n"
-                    f"{HELP_MESSAGE}"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"{SECONDARY_HELP}\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"💡 使用 {reminder}敏感词检测 查看完整帮助"
                 ))
             )
             return True
