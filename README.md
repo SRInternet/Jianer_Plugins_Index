@@ -1,4 +1,5 @@
 <div align="center">
+
   
 # <image src="https://github.com/user-attachments/assets/f63cbae0-7251-496b-b493-6e695ac1b25f" height="45"/>  简儿 - 插件主页
 <img src="https://img.shields.io/badge/OneBot-11-black?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABwCAMAAADxPgR5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRF////29vbr6+vAAAAk1hCcwAAAAR0Uk5T////AEAqqfQAAAKcSURBVHja7NrbctswDATQXfD//zlpO7FlmwAWIOnOtNaTM5JwDMa8E+PNFz7g3waJ24fviyDPgfhz8fHP39cBcBL9KoJbQUxjA2iYqHL3FAnvzhL4GtVNUcoSZe6eSHizBcK5LL7dBr2AUZlev1ARRHCljzRALIEog6H3U6bCIyqIZdAT0eBuJYaGiJaHSjmkYIZd+qSGWAQnIaz2OArVnX6vrItQvbhZJtVGB5qX9wKqCMkb9W7aexfCO/rwQRBzsDIsYx4AOz0nhAtWu7bqkEQBO0Pr+Ftjt5fFCUEbm0Sbgdu8WSgJ5NgH2iu46R/o1UcBXJsFusWF/QUaz3RwJMEgngfaGGdSxJkE/Yg4lOBryBiMwvAhZrVMUUvwqU7F05b5WLaUIN4M4hRocQQRnEedgsn7TZB3UCpRrIJwQfqvGwsg18EnI2uSVNC8t+0QmMXogvbPg/xk+Mnw/6kW/rraUlvqgmFreAA09xW5t0AFlHrQZ3CsgvZm0FbHNKyBmheBKIF2cCA8A600aHPmFtRB1XvMsJAiza7LpPog0UJwccKdzw8rdf8MyN2ePYF896LC5hTzdZqxb6VNXInaupARLDNBWgI8spq4T0Qb5H4vWfPmHo8OyB1ito+AysNNz0oglj1U955sjUN9d41LnrX2D/u7eRwxyOaOpfyevCWbTgDEoilsOnu7zsKhjRCsnD/QzhdkYLBLXjiK4f3UWmcx2M7PO21CKVTH84638NTplt6JIQH0ZwCNuiWAfvuLhdrcOYPVO9eW3A67l7hZtgaY9GZo9AFc6cryjoeFBIWeU+npnk/nLE0OxCHL1eQsc1IciehjpJv5mqCsjeopaH6r15/MrxNnVhu7tmcslay2gO2Z1QfcfX0JMACG41/u0RrI9QAAAABJRU5ErkJggg==" alt="Badge">
@@ -9,9 +10,15 @@
 
 [Main Repo](https://github.com/SRInternet-Studio/Jianer_QQ_bot/)
 
+![Alt](https://repobeats.axiom.co/api/embed/5a7b65a2df07732a101273a56c0f40add32dca69.svg "Repobeats analytics image")
+
 </div>
 
-## 如何上传
+## ⚡ 如何编写
+
+请参阅文档 [简儿 NEXT 3：Create a New Plugin](https://github.com/SRInternet-Studio/Jianer_QQ_bot/wiki/Create-a-New-Plugin)
+
+## ✨ 如何上传
 > [!Important]
 > 
 > **重要：请务必按照以下规范流程上传您的插件，不规范的上传可能会导致无法正常在设置向导中下载或更新你的插件，还有可能导致插件市场损坏。**
@@ -62,11 +69,15 @@
         git push origin main  # 推送到 origin 仓库的 main 分支 (如果你的仓库使用其他分支，请替换 main)
         ```
 
-8.  **创建 Pull Request (PR)（重要）**
+8.  **创建 Pull Request (PR)(拉取请求)（重要）**
     *   访问你在 GitHub 账号下的 Fork 仓库。
-    *   GitHub 会提示你 "Compare & pull request"，点击该按钮。
-    *   填写 PR 的标题和描述信息，描述你添加了什么插件，以及插件的功能。
+    *   GitHub 会提示你 "Contribute" ，点击这个按钮，然后再点击 "Compare & pull request" 。
+    *   填写 PR 的标题和描述信息，描述你添加了什么插件，以及插件的功能和您的插件测试截图。
     *   点击 "Create pull request" 按钮，提交你的 PR。
+
+> [!Important]
+> 
+> 请注意，在进行拉取请求的创建时，请确保您已经完成了您的插件的测试，并且详细描述您的插件的功能,如果**您在创建拉取请求时没有对于您的插件进行测试或者发生了任何因为没有仔细阅读Jianer_QQ_bot插件规范/Jianer_Plugin_Index插件上传教程导致的一切问题**，均由插件开发者（您）来承担
 
 9.  **等待审核**
     *   仓库维护者会审核你的 PR，如果一切符合规范，你的插件将被合并到主仓库中。
@@ -104,10 +115,15 @@ Jianer_Plugins_Index/
 > 
 > 作为一名合格的开发者，你不应该开发具有成人色情、暴力、血腥等违反 GitHub 社区规定 的插件上传至仓库，也不应改动别人的插件文件夹。**一经审查发现有以上行为，将会被删除插件，并在一段时间内撤销其推送权限。**
 
-## 如何下载、更新和卸载
+## ⬇ 如何下载、更新和卸载
 1.	在设置向导中打开插件中心
 2.	点击想要下载或更新的插件
 3.	在弹出的窗口中，点击下载、更新或卸载
 
-## 关于
+## ⚖ 许可证
+如在对应的插件文件夹下无 LICENCE/LICENSE 文件，且开发者未在对应的插件文件夹下的 README.md 中特殊说明，本插件中心的全部插件均适用于 MIT 协议，协议署名默认为 Pull Requests 的发起者或推送者的 Github 昵称。
+
+**[SR思锐 团队](https://github.com/SRInternet-Studio/) 不保留第三方开发者的插件的所有权利。**
+
+## ❕ 关于
 本文基于插件规范版本 NEXT 3 编写。插件可能基于 [HypeR](https://github.com/HarcicYang/HypeR_Bot) 框架和 OneBot 11 框架。
